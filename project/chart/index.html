@@ -1,21 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <link rel="stylesheet" href="./style.css" />
-  </head>
+<html lang="en" dir="ltr">
 
-  <body>
-    <div class="card">
-      <div class="card-content">
-        <div id="line-chart"></div>
-      </div>
-    </div>
+<head>
+  <meta charset="utf-8">
+  <title>Bar Chart</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
+</head>
 
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-    <script src="./script.js"></script>
-  </body>
+<body>
+
+  <!--chart start-->
+  <div class="chart">
+    <ul class="numbers">
+      <li><span>100%</span></li>
+      <li><span>50%</span></li>
+      <li><span>0%</span></li>
+    </ul>
+    <ul class="bars">
+      <li>
+        <div class="bar" data-percentage="50"></div><span>Tomat</span>
+      </li>
+      <li>
+        <div class="bar" data-percentage="30"></div><span>Cabe</span>
+      </li>
+      <li>
+        <div class="bar" data-percentage="60"></div><span>Terong</span>
+      </li>
+      <li>
+        <div class="bar" data-percentage="100"></div><span>Brokoli</span>
+      </li>
+      <li>
+        <div class="bar" data-percentage="80"></div><span>Timun</span>
+      </li>
+    </ul>
+  </div>
+  <!--chart end-->
+
+  <script type="text/javascript">
+    $(function () {
+      $('.bars li .bar').each(function (key, bar) {
+        var percentage = $(this).data('percentage');
+        $(this).animate({
+          'height': percentage + '%'
+        }, 1000);
+      });
+    });
+  </script>
+
+</body>
+
 </html>
