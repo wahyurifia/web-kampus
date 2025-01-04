@@ -89,10 +89,12 @@ footer .social-icons a {
 }
 
 @media screen and (max-width: 668px) {
+
   #skills .card,
   #portfolio .card-wrapper {
     width: 100% !important;
   }
+
   #about .hire-text h2 {
     height: 70px;
     width: 70px;
